@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pя◎jєct Zєя◎ | John Rave Arizobal | Photo Gallery</title>
+    <link rel="shortcut icon" href="images/Project_Zero_Logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <audio id="bg-music" loop>
+      <source src="music/bg.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center py-3">
+        <h1>My Photo Gallery</h1>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#me">Me</a></li>
+              <li class="nav-item"><a class="nav-link" href="#family">Family</a></li>
+              <li class="nav-item"><a class="nav-link" href="#babi">Babi</a></li>
+              <li class="nav-item"><a class="nav-link" href="#squad">Squad</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section id="me">
+        <h2>Me</h2>
+        <div class="row">
+          <div class="col-md-4"><img src="images/1.png" class="img-fluid" alt="me1"></div>
+          <div class="col-md-4"><img src="images/2.png" class="img-fluid" alt="me2"></div>
+          <div class="col-md-4"><img src="images/3.png" class="img-fluid" alt="me3"></div>
+          <div class="col-md-4"><img src="images/4.png" class="img-fluid" alt="me4"></div>
+          <div class="col-md-4"><img src="images/5.png" class="img-fluid" alt="me5"></div>
+          <div class="col-md-4"><img src="images/6.png" class="img-fluid" alt="me6"></div>
+        </div>
+      </section>
+      <section id="family">
+        <h2>Family</h2>
+        <div class="row">
+          <div class="col-md-4"><img src="images/7.png" class="img-fluid" alt="family7"></div>
+          <div class="col-md-4"><img src="images/9.png" class="img-fluid" alt="family9"></div>
+          <div class="col-md-4"><img src="images/8.png" class="img-fluid" alt="family8"></div>
+          <div class="col-md-4"><img src="images/10.png" class="img-fluid" alt="family10"></div>
+          <div class="col-md-4"><img src="images/11.png" class="img-fluid" alt="family11"></div>
+          <div class="col-md-4"><img src="images/12.png" class="img-fluid" alt="family12"></div>
+        </div>
+      </section>
+      <section id="babi">
+        <h2>Babi</h2>
+        <div class="row">
+          <div class="col-md-4"><img src="images/16.png" class="img-fluid" alt="babi16"></div>
+          <div class="col-md-4"><img src="images/14.png" class="img-fluid" alt="babi14"></div>
+          <div class="col-md-4"><img src="images/15.png" class="img-fluid" alt="babi15"></div>
+          <div class="col-md-4"><img src="images/17.png" class="img-fluid" alt="babi17"></div>
+          <div class="col-md-4"><img src="images/13.png" class="img-fluid" alt="babi13"></div>
+          <div class="col-md-4"><img src="images/18.png" class="img-fluid" alt="babi18"></div>
+
+        </div>
+      </section>
+      <section id="squad">
+        <h2>Squad</h2>
+        <div class="row">
+          <div class="col-md-4"><img src="images/19.png" class="img-fluid" alt="squad19"></div>
+          <div class="col-md-4"><img src="images/24.png" class="img-fluid" alt="squad24"></div>
+          <div class="col-md-4"><img src="images/20.png" class="img-fluid" alt="squad20"></div>
+          <div class="col-md-4"><img src="images/22.png" class="img-fluid" alt="squad19"></div>
+          <div class="col-md-4"><img src="images/21.png" class="img-fluid" alt="squad24"></div>
+          <div class="col-md-4"><img src="images/23.png" class="img-fluid" alt="squad20"></div>
+        </div>
+      </section>
+      <button onclick="goToTop()" id="topBtn" class="btn btn-primary" title="Go to top of page">Top</button>
+      <footer class="text-center py-3">
+        <p>Pя◎jєct Zєя◎ | John Rave Arizobal | Photo Gallery</p>
+      </footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      let audio = document.getElementById("bg-music");
+      
+      audio.play().then(() => {
+        console.log("Music is playing.");
+      }).catch(error => {
+        console.log("Autoplay blocked. Click anywhere to start music.");
+        document.addEventListener("click", function () {
+          audio.play();
+        }, { once: true }); 
+      });
+    });
+      $(document).ready(function() {
+        $(".nav-link").on("click", function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            let hash = this.hash;
+            $('html, body').animate({ scrollTop: $(hash).offset().top }, 800);
+          }
+        });
+      });
+
+      function goToTop() {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+      }
+
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 4) {
+          $('#topBtn').fadeIn();
+        } else {
+          $('#topBtn').fadeOut();
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+          for (let i = 0; i < 20; i++) {
+              let falling = document.createElement("div");
+              falling.className = "falling-element";
+              falling.style.left = Math.random() * 100 + "vw";
+              falling.style.animationDuration = Math.random() * 3 + 2 + "s";
+              falling.style.animationDelay = Math.random() * 5 + "s";
+              document.body.appendChild(falling);
+          }
+      });
+    </script>
+  </body>
+</html>
