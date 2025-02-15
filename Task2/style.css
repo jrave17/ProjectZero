@@ -68,6 +68,7 @@ h2 {
 .img-fluid {
     width: 100%;
     height: auto;
+    padding: 1%;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
