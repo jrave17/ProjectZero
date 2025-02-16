@@ -149,7 +149,7 @@ body {
 /* End Header */
 /* Start Landing Section */
 .landing {
-  background-image: url(../images/landing.svg);
+  background-image: url(../images/landing.png);
   background-size: cover;
   background-position: center;
   height: calc(120vh - 64px);
