@@ -149,15 +149,31 @@ body {
 /* End Header */
 /* Start Landing Section */
 .landing {
-  background-image: url(../images/ProjectZero.png);
+  background-image: url(../images/landing.svg);
   background-size: cover;
+  background-position: center;
   height: calc(120vh - 64px);
   position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing {
+    height: 100vh; /* Adjust height for smaller screens */
+    background-size: contain; /* Prevent excessive cropping */
+  }
+}
+
+@media (max-width: 480px) {
+  .landing {
+    height: 90vh; /* Further adjust for mobile devices */
+    background-size: cover; /* Ensures full background display */
+  }
 }
 .landing .intro-text {
   position: absolute;
   left: 50%;
-  top: 10%;
+  top: 5%;
   text-align: center;
   transform: translate(-50%, -50%);
   width: 1000px;
